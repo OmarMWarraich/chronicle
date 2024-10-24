@@ -9,11 +9,12 @@
 
 # Create 50 posts
 # 
-50.times do |i|
-  Post.create(
-    title: "Post #{i + 1}",
-    text: "This is the text of the post #{i + 1}",
-    cover: "https://picsum.photos/seed/#{i + 1}/800/600",
-    author_id: User.first.id
-  )
-end
+# 50.times do |i|
+#   Post.create(
+#     title: "Post #{i + 1}",
+#     text: "This is the text of the post #{i + 1}",
+#     cover: "https://picsum.photos/seed/#{i + 1}/800/600",
+#     author_id: User.first.id
+#   )
+# end
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
