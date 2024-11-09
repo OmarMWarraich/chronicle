@@ -99,3 +99,7 @@ gem 'country_select', '~> 10.0'
 gem 'MailchimpTransactional', '~> 1.0', '>= 1.0.59'
 
 gem 'state_machine', '~> 1.2'
+
+gem 'activeadmin'
+
+gem 'sassc-rails'

@@ -29,6 +29,14 @@ class Comment < ApplicationRecord
     comments.includes(:author).limit(5)
   end
 
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[text created_at updated_at author_id post_id]
+  end
+
+  def self.ransackable_associations(_auth_object = nil)
+    %w[author post]
+  end
+
   private
 
   def update_comments_counter

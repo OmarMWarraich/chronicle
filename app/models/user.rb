@@ -54,4 +54,13 @@ class User < ApplicationRecord
   def send_welcome_email
     AdminMailer.new_user(self).deliver
   end
+
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[name bio role posts_counter email confirmed_at slug slugs_id comments_id likes_id photo reset_password_token unconfirmed_email
+       confirmation_token]
+  end
+
+  def self.ransackable_associations(_auth_object = nil)
+    %w[comments likes posts]
+  end
 end
